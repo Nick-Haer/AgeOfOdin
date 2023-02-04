@@ -1,8 +1,16 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import axios from "axios";
 
 function App() {
+
+  useEffect(() => {
+      axios.get('/api/mead/allMead/blueisgood')
+          .then((res) => console.log(res))
+          .catch((err) => console.log('oops'))
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">

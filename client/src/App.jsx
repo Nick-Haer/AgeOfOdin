@@ -6,9 +6,15 @@ import axios from "axios";
 function App() {
 
   useEffect(() => {
-      axios.get('/api/mead/allMead/blueisgood')
+      axios.get('http://localhost:8000/api/mead/allMead', )
           .then((res) => console.log(res))
           .catch((err) => console.log('oops'))
+  }, []);
+
+  useEffect(() => {
+    axios.post('http://localhost:8000/api/mead/melomel/tea', {bod: 'the hair, the bod!'})
+        .then((res) => console.log(res))
+        .catch((err) => console.log('oops'))
   }, []);
 
   return (
